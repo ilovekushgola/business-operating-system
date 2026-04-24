@@ -50,17 +50,27 @@ npx degit ilovekushgola/business-operating-system#master ~/.agents/skills/busine
 ### Manual - Windows PowerShell
 
 ```powershell
+# Step 1: Delete old install if exists, then create folder
+if (Test-Path "$env:USERPROFILE\.agents\skills\business-brain") {
+    Remove-Item -Recurse -Force "$env:USERPROFILE\.agents\skills\business-brain"
+}
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills\business-brain" | Out-Null
+
+# Step 2: Clone
 git clone https://github.com/ilovekushgola/business-operating-system.git "$env:USERPROFILE\temp-bb"
-Move-Item "$env:USERPROFILE\temp-bb\skills" "$env:USERPROFILE\.agents\skills\business-brain\"
-Move-Item "$env:USERPROFILE\temp-bb\agents" "$env:USERPROFILE\.agents\skills\business-brain\"
-Move-Item "$env:USERPROFILE\temp-bb\commands" "$env:USERPROFILE\.agents\skills\business-brain\"
-Move-Item "$env:USERPROFILE\temp-bb\hooks" "$env:USERPROFILE\.agents\skills\business-brain\"
-Move-Item "$env:USERPROFILE\temp-bb\workflows" "$env:USERPROFILE\.agents\skills\business-brain\"
-Move-Item "$env:USERPROFILE\temp-bb\mcp-configs" "$env:USERPROFILE\.agents\skills\business-brain\"
-Move-Item "$env:USERPROFILE\temp-bb\identities" "$env:USERPROFILE\.agents\skills\business-brain\"
-Move-Item "$env:USERPROFILE\temp-bb\memories" "$env:USERPROFILE\.agents\skills\business-brain\"
-Move-Item "$env:USERPROFILE\temp-bb\docs" "$env:USERPROFILE\.agents\skills\business-brain\"
+
+# Step 3: Copy all folders
+Copy-Item -Path "$env:USERPROFILE\temp-bb\skills" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
+Copy-Item -Path "$env:USERPROFILE\temp-bb\agents" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
+Copy-Item -Path "$env:USERPROFILE\temp-bb\commands" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
+Copy-Item -Path "$env:USERPROFILE\temp-bb\hooks" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
+Copy-Item -Path "$env:USERPROFILE\temp-bb\workflows" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
+Copy-Item -Path "$env:USERPROFILE\temp-bb\mcp-configs" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
+Copy-Item -Path "$env:USERPROFILE\temp-bb\identities" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
+Copy-Item -Path "$env:USERPROFILE\temp-bb\memories" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
+Copy-Item -Path "$env:USERPROFILE\temp-bb\docs" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
+
+# Step 4: Clean
 Remove-Item -Recurse -Force "$env:USERPROFILE\temp-bb"
 ```
 
