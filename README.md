@@ -6,6 +6,43 @@ A comprehensive business skills library that enables ANY AI agent to perform as 
 
 ---
 
+## ⚡ Quick Install (One-Line)
+
+```bash
+npx skills add ilovekushgola/business-operating-system
+```
+
+### Fallback Methods (if npx skills not available):
+
+```bash
+# Method 1: degit
+npx degit ilovekushgola/business-operating-system#main ~/.agents/skills/business-brain
+
+# Method 2: Git clone
+git clone https://github.com/ilovekushgola/business-operating-system.git ~/.agents/skills/business-brain
+```
+
+---
+
+## 📋 After Install - Usage
+
+```bash
+# List all skills
+ls ~/.agents/skills/business-brain/skills
+
+# Use a skill
+@invoke business-brain sales-manager
+@invoke business-brain lead-qualification
+@invoke business-brain cfo-expert
+
+# Or use BOS commands
+/bos status
+/bos daily
+/bos weekly
+```
+
+---
+
 ## 📊 Complete Skills Summary
 
 ### Layer 1: Executive (3 Skills)
