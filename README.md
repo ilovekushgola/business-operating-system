@@ -4,278 +4,64 @@
   <img src="https://img.shields.io/github/stars/ilovekushgola/business-operating-system" alt="Stars">
   <img src="https://img.shields.io/github/forks/ilovekushgola/business-operating-system" alt="Forks">
   <img src="https://img.shields.io/github/license/ilovekushgola/business-operating-system" alt="License">
-  <img src="https://img.shields.io/github/contributors/ilovekushgola/business-operating-system" alt="Contributors">
 </p>
 
 ---
 
 ## ⚡ What is Business Brain?
 
-**Business Brain** is an open-source AI-powered business operating system that gives AI coding agents (Claude Code, OpenCode, Cursor, etc.) the ability to perform as a complete business team - from CEO to Sales, Marketing, Finance, HR, and more.
-
-Think of it as **hiring an entire executive team** for your AI agent - instantly.
+**Business Brain** gives AI coding agents ability to function as a complete business team - CEO, Sales, Marketing, Finance, HR, and more.
 
 ---
 
-## 🎯 What Can It Do?
+## 🚀 Install (2 Lines!)
 
-| Function | Skills Available |
-|----------|-----------------|
-| **Sales** | Lead qualification, pipeline management, forecasting, negotiation |
-| **Marketing** | SEO, content, ads, email campaigns, analytics |
-| **Finance** | Financial planning, investor relations, budgeting, reporting |
-| **HR** | Recruiting, onboarding, performance reviews, compensation |
-| **Operations** | Project management, process optimization, vendor management |
-| **Customer Support** | Ticket handling, escalation, knowledge base |
-| **Product** | Strategy, roadmap, user research, prioritization |
-| **Legal** | Contract review, compliance, risk assessment |
-| **Engineering** | Code review, architecture, security |
+### Windows PowerShell
 
----
-
-## 🚀 Quick Install
-
-### One-Line Install (Recommended)
-
-```bash
-npx skills add ilovekushgola/business-operating-system
+```powershell
+if (Test-Path "$env:USERPROFILE\.agents\skills") { Remove-Item -Recurse -Force "$env:USERPROFILE\.agents\skills" }
+git clone https://github.com/ilovekushgola/business-operating-system.git "$env:USERPROFILE\.agents\skills\business-brain"
 ```
 
-### degit (Fast)
+### Mac/Linux
+
+```bash
+rm -rf ~/.agents/skills
+git clone https://github.com/ilovekushgola/business-operating-system.git ~/.agents/skills/business-brain
+```
+
+### degit
 
 ```bash
 npx degit ilovekushgola/business-operating-system#master ~/.agents/skills/business-brain
-```
-
-### Manual - Windows PowerShell
-
-```powershell
-# Step 1: Delete old install if exists, then create folder
-if (Test-Path "$env:USERPROFILE\.agents\skills\business-brain") {
-    Remove-Item -Recurse -Force "$env:USERPROFILE\.agents\skills\business-brain"
-}
-New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills\business-brain" | Out-Null
-
-# Step 2: Clone
-git clone https://github.com/ilovekushgola/business-operating-system.git "$env:USERPROFILE\temp-bb"
-
-# Step 3: Copy all folders
-Copy-Item -Path "$env:USERPROFILE\temp-bb\skills" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
-Copy-Item -Path "$env:USERPROFILE\temp-bb\agents" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
-Copy-Item -Path "$env:USERPROFILE\temp-bb\commands" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
-Copy-Item -Path "$env:USERPROFILE\temp-bb\hooks" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
-Copy-Item -Path "$env:USERPROFILE\temp-bb\workflows" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
-Copy-Item -Path "$env:USERPROFILE\temp-bb\mcp-configs" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
-Copy-Item -Path "$env:USERPROFILE\temp-bb\identities" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
-Copy-Item -Path "$env:USERPROFILE\temp-bb\memories" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
-Copy-Item -Path "$env:USERPROFILE\temp-bb\docs" -Destination "$env:USERPROFILE\.agents\skills\business-brain\" -Recurse -Force
-
-# Step 4: Clean
-Remove-Item -Recurse -Force "$env:USERPROFILE\temp-bb"
-```
-
-### Manual - Mac/Linux
-
-```bash
-mkdir -p ~/.agents/skills/business-brain
-git clone https://github.com/ilovekushgola/business-operating-system.git temp-bb
-mv temp-bb/skills temp-bb/agents temp-bb/commands temp-bb/hooks temp-bb/workflows temp-bb/mcp-configs temp-bb/identities temp-bb/memories temp-bb/docs ~/.agents/skills/business-brain/
-rm -rf temp-bb
 ```
 
 ---
 
 ## 📚 What's Inside?
 
-### 80+ Business Skills Across 15 Departments
-
-```
-business-brain/
-├── skills/                    # 80+ skills
-│   ├── executive-leadership/  # Strategy, board, fundraising
-│   ├── sales-crm/           # Pipeline, deals, forecasting
-│   ├── marketing-ads/        # SEO, content, campaigns
-│   ├── finance-accounting/   # Planning, reporting, investors
-│   ├── hr-recruitment/       # Hiring, onboarding
-│   ├── operations-pm/       # Projects, processes
-│   ├── customer-service/     # Support, success
-│   ├── product/             # Strategy, roadmap
-│   ├── tech/                # Development, security
-│   └── ...
-│
-├── commands/                  # CLI commands (11)
-│   ├── sales-pipeline/
-│   ├── marketing-campaign/
-│   ├── financial-report/
-│   └── ...
-│
-├── agents/                   # AI team agents (18)
-│   ├── sales-agent/
-│   ├── marketing-agent/
-│   ├── finance-agent/
-│   └── ...
-│
-├── hooks/                    # Quality gates (4)
-│   ├── commit-quality/
-│   ├── secrets-detect/
-│   └── ...
-│
-├── workflows/               # Business workflows (4)
-│   ├── daily-standup/
-│   ├── weekly-review/
-│   └── ...
-│
-├── identities/              # Agent configurations
-└── use_cases.md            # Real-world examples
-```
-
----
-
-## 💡 Use Cases
-
-### For Startups
-- Set up sales process from scratch
-- Create marketing campaigns
-- Manage hiring pipeline
-
-### For Enterprises  
-- Automate financial reporting
-- Streamline customer support
-- Improve project management
-
-### For Agencies
-- Run client campaigns
-- Handle account management
-- Deliver proposals
-
-**[View More Use Cases →](./USE_CASES.md)**
-
----
-
-## 🤖 Compatible AI Agents
-
-| Agent | Status | Install Command |
-|-------|---------|------------------|
-| Claude Code | ✅ Full | `npx skills add ilovekushgola/business-operating-system` |
-| OpenCode | ✅ Full | `npx skills add ilovekushgola/business-operating-system` |
-| Cursor | ✅ Full | Clone to `~/.cursor/rules/` |
-| OpenClaw | ✅ Full | Clone to `~/.claude/skills/openclaw/` |
-| Hermes | ✅ Full | Clone to `~/.claude/skills/hermes/` |
-| Codex CLI | ✅ Full | Clone to agent skills folder |
-| Any SKILL.md Agent | ✅ Universal | Clone to skills folder |
-
----
-
-## 🎓 Example Usage
-
-### Qualify a Lead
-
-```bash
-# Use lead-qualification skill
-@invoke lead-qualification
-
-# Ask: "Qualify this lead: Company XYZ, $50K budget, CTO decision maker"
-# Result: Score: 8/10 - QUALIFIED
-```
-
-### Create Marketing Campaign
-
-```bash
-# Use digital-marketer skill  
-@invoke digital-marketer
-
-# Ask: "Create a launch campaign for our new product"
-# Result: Complete campaign plan with channels, timeline, budget
-```
-
-### Financial Forecast
-
-```bash
-# Use cfo-expert skill
-@invoke cfo-expert
-
-# Ask: "Create Q1 revenue forecast"
-# Result: Detailed forecast with best/worst case scenarios
-```
-
----
-
-## 📖 Documentation
-
-| Topic | Link |
-|-------|------|
-| Installation Guide | [INSTALL.md](./INSTALL.md) |
-| Use Cases | [USE_CASES.md](./USE_CASES.md) |
-| Contributing | [CONTRIBUTING.md](./CONTRIBUTING.md) |
-| Skills List | [skills/](./skills/) |
-
----
-
-## 🏆 Features
-
-- ✅ **80+ Skills** - Comprehensive business coverage
-- ✅ **Detailed Templates** - Ready-to-use frameworks
-- ✅ **Multi-Agent Support** - Works with all major AI agents
-- ✅ **Open Source** - Free to use and modify
-- ✅ **Community Driven** - Contributions welcome
-- ✅ **SEO Optimized** - Well-documented for discovery
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-1. **Fork** the repository
-2. **Create** a feature branch
-3. **Add** new skills or improve existing ones
-4. **Submit** a Pull Request
-
-**[Contributing Guide →](./CONTRIBUTING.md)**
-
----
-
-## 📊 Stats
-
-<p align="center">
-
-| Metric | Value |
-|--------|--------|
+| Component | Count |
+|-----------|-------|
 | Skills | 80+ |
 | Commands | 11 |
 | Agents | 18 |
-| Departments | 15 |
-| Contributors | Growing! |
-
-</p>
+| Hooks | 4 |
+| Workflows | 4 |
 
 ---
 
-## 📝 License
+## 🤖 Compatible Agents
 
-MIT License - See [LICENSE](./LICENSE) for details.
-
----
-
-## 🙏 Acknowledgments
-
-- Inspired by [everything-claude-code](https://github.com/affaan-m/everything-claude-code)
-- Built for the AI agent community
-- Special thanks to all contributors!
+Claude Code ✅ | OpenCode ✅ | Cursor ✅ | Any SKILL.md Agent ✅
 
 ---
 
-## 🔗 Links
+## 📖 Docs
 
-<p align="center">
-
-[![GitHub](https://img.shields.io/badge/GitHub-Business%20Brain-181717?style=for-the-badge&logo=github)](https://github.com/ilovekushgola/business-operating-system)
-[![Stars](https://img.shields.io/badge/Star-If%20Useful-yellow?style=for-the-badge)](https://github.com/ilovekushgola/business-operating-system/stargazers)
-
-</p>
+- [Install](./INSTALL.md)
+- [Use Cases](./USE_CASES.md)
+- [Contributing](./CONTRIBUTING.md)
 
 ---
 
-**⭐ Star us on GitHub if you find this useful!**
-
-**Made with ❤️ by the AI Agent Community**
+**MIT License**
