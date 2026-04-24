@@ -1,12 +1,42 @@
 {
   "name": "business-operating-system",
   "version": "1.0.0",
-  "description": "Complete AI business operating system with 80+ skills",
-  "scripts": {
-    "test": "node tests/run-all.js",
-    "test:watch": "node tests/run-all.js --watch"
+  "description": "Complete AI business operating system with 80+ skills for AI coding agents - enables AI to perform as a complete business team",
+  "keywords": [
+    "ai",
+    "business",
+    "operating-system",
+    "claude",
+    "cursor",
+    "opencode",
+    "openclaw",
+    "skills",
+    "agents",
+    "automation",
+    "sales",
+    "marketing",
+    "finance",
+    "hr",
+    "crm",
+    "cfo",
+    "ceo",
+    "startup",
+    "saas",
+    "business-operations",
+    "ai-assistant",
+    "productivity"
+  ],
+  "homepage": "https://github.com/ilovekushgola/business-operating-system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilovekushgola/business-operating-system.git"
   },
-  "devDependencies": {
-    "vitest": "^1.0.0"
+  "bugs": {
+    "url": "https://github.com/ilovekushgola/business-operating-system/issues"
+  },
+  "author": "Business Brain Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
