@@ -41,14 +41,36 @@ Think of it as **hiring an entire executive team** for your AI agent - instantly
 npx skills add ilovekushgola/business-operating-system
 ```
 
-### Alternative Methods
+### degit (Fast)
 
 ```bash
-# degit method
-npx degit ilovekushgola/business-operating-system#main ~/.agents/skills/business-brain
+npx degit ilovekushgola/business-operating-system#master ~/.agents/skills/business-brain
+```
 
-# Git clone
-git clone https://github.com/ilovekushgola/business-operating-system.git ~/.agents/skills/business-brain
+### Manual - Windows PowerShell
+
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills\business-brain" | Out-Null
+git clone https://github.com/ilovekushgola/business-operating-system.git "$env:USERPROFILE\temp-bb"
+Move-Item "$env:USERPROFILE\temp-bb\skills" "$env:USERPROFILE\.agents\skills\business-brain\"
+Move-Item "$env:USERPROFILE\temp-bb\agents" "$env:USERPROFILE\.agents\skills\business-brain\"
+Move-Item "$env:USERPROFILE\temp-bb\commands" "$env:USERPROFILE\.agents\skills\business-brain\"
+Move-Item "$env:USERPROFILE\temp-bb\hooks" "$env:USERPROFILE\.agents\skills\business-brain\"
+Move-Item "$env:USERPROFILE\temp-bb\workflows" "$env:USERPROFILE\.agents\skills\business-brain\"
+Move-Item "$env:USERPROFILE\temp-bb\mcp-configs" "$env:USERPROFILE\.agents\skills\business-brain\"
+Move-Item "$env:USERPROFILE\temp-bb\identities" "$env:USERPROFILE\.agents\skills\business-brain\"
+Move-Item "$env:USERPROFILE\temp-bb\memories" "$env:USERPROFILE\.agents\skills\business-brain\"
+Move-Item "$env:USERPROFILE\temp-bb\docs" "$env:USERPROFILE\.agents\skills\business-brain\"
+Remove-Item -Recurse -Force "$env:USERPROFILE\temp-bb"
+```
+
+### Manual - Mac/Linux
+
+```bash
+mkdir -p ~/.agents/skills/business-brain
+git clone https://github.com/ilovekushgola/business-operating-system.git temp-bb
+mv temp-bb/skills temp-bb/agents temp-bb/commands temp-bb/hooks temp-bb/workflows temp-bb/mcp-configs temp-bb/identities temp-bb/memories temp-bb/docs ~/.agents/skills/business-brain/
+rm -rf temp-bb
 ```
 
 ---
