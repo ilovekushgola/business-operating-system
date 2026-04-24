@@ -1,0 +1,12 @@
+{
+  "name": "business-operating-system",
+  "version": "1.0.0",
+  "description": "Complete AI business operating system with 80+ skills",
+  "scripts": {
+    "test": "node tests/run-all.js",
+    "test:watch": "node tests/run-all.js --watch"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.0"
+  }
+}

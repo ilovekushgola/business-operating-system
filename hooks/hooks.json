@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "pre-commit": [
+      {
+        "name": "commit-quality",
+        "enabled": true,
+        "enforce": true
+      },
+      {
+        "name": "secrets-detect",
+        "enabled": true,
+        "enforce": true
+      }
+    ],
+    "post-build": [
+      {
+        "name": "test-verify",
+        "enabled": true,
+        "enforce": true
+      },
+      {
+        "name": "build-check",
+        "enabled": true,
+        "enforce": true
+      }
+    ]
+  }
+}
