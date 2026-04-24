@@ -172,7 +172,7 @@ business-brain/
 
 | Topic | Link |
 |-------|------|
-| Installation Guide | [INSTALL_QUICK.md](./INSTALL_QUICK.md) |
+| Installation Guide | [INSTALL.md](./INSTALL.md) |
 | Use Cases | [USE_CASES.md](./USE_CASES.md) |
 | Contributing | [CONTRIBUTING.md](./CONTRIBUTING.md) |
 | Skills List | [skills/](./skills/) |

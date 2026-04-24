@@ -427,7 +427,7 @@ Have a real-world example? Add it to the repo!
 
 ## 🔗 Quick Links
 
-- [Install Guide](./INSTALL_QUICK.md)
+- [Install Guide](./INSTALL.md)
 - [Contributing Guide](./CONTRIBUTING.md)
 - [Skills Library](./skills/)
 - [GitHub](https://github.com/ilovekushgola/business-operating-system)
