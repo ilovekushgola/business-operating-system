@@ -1,0 +1,40 @@
+name: Weekly Review
+description: End of week team retrospective
+trigger: Friday
+
+steps:
+  - name: Metrics Summary
+    action: run_skill
+    skill: fp-and-a
+    command: "/finance weekly"
+
+  - name: Sales Win/Loss
+    action: run_skill
+    skill: sales-manager
+    command: "/sales weekly"
+
+  - name: Campaign Performance
+    action: run_skill
+    skill: digital-marketer
+    command: "/ads weekly"
+
+  - name: Support Metrics
+    action: run_skill
+    skill: support-manager
+    command: "/support weekly"
+
+  - name: Team Retro
+    action: run_skill
+    skill: hr-director
+    command: "/team retro"
+
+  - name: Risks & Issues
+    action: ask
+    questions:
+      - header: Blocker
+        question: "Any blockers?"
+        options:
+          - description: "No blockers this week"
+            label: "None"
+          - description: "Need escalations"
+            label: "Yes - describe"

@@ -1,0 +1,30 @@
+#!/bin/bash
+# Business Brain CLI - bos command
+
+case "$1" in
+  status)
+    echo "📊 Business Status"
+    echo "Run: /business metrics"
+    ;;
+  metrics)
+    echo "📈 Viewing metrics..."
+    ;;
+  pipeline)
+    echo "💰 Sales Pipeline"
+    ;;
+  tasks)
+    echo "📋 Active Tasks"
+    ;;
+  help|*)
+    echo "🧠 Business Brain CLI"
+    echo ""
+    echo "Commands:"
+    echo "  bos status     - Company status"
+    echo "  bos metrics   - KPI dashboard"
+    echo "  bos pipeline  - Sales pipeline"
+    echo "  bos tasks     - Active tasks"
+    echo ""
+    echo "Setup:"
+    echo "  ./install-all.sh"
+    ;;
+esac

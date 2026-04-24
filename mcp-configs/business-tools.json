@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "salesforce": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-salesforce"],
+      "env": {
+        "SALESFORCE_CLIENT_ID": "${SALESFORCE_CLIENT_ID}",
+        "SALESFORCE_CLIENT_SECRET": "${SALESFORCE_CLIENT_SECRET}",
+        "SALESFORCE_INSTANCE_URL": "${SALESFORCE_INSTANCE_URL}"
+      }
+    },
+    "hubspot": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-hubspot"],
+      "env": {
+        "HUBSPOT_ACCESS_TOKEN": "${HUBSPOT_ACCESS_TOKEN}"
+      }
+    },
+    "quickbooks": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-quickbooks"],
+      "env": {
+        "QUICKBOOKS_CLIENT_ID": "${QUICKBOOKS_CLIENT_ID}",
+        "QUICKBOOKS_CLIENT_SECRET": "${QUICKBOOKS_CLIENT_SECRET}",
+        "QUICKBOOKS_REALM_ID": "${QUICKBOOKS_REALM_ID}"
+      }
+    }
+  }
+}

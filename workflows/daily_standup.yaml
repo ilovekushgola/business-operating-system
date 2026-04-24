@@ -1,0 +1,26 @@
+name: Daily Standup
+description: Quick team sync to start each day
+trigger: Manual or 9AM daily
+
+steps:
+  - name: CFO Report
+    action: run_skill
+    skill: fp-and-a
+    command: "/finance daily"
+
+  - name: Sales Pipeline
+    action: run_skill
+    skill: pipeline-management
+    command: "/pipeline daily"
+
+  - name: Support Queue
+    action: run_skill
+    skill: support-manager
+    command: "/support queue"
+
+  - name: Action Items
+    action: create_list
+    items:
+      - "[ ] Items needing attention"
+      - "[ ] Blockers"
+      - "[ ] Wins to celebrate

@@ -1,0 +1,29 @@
+name: Monthly Close
+description: End of month financial close
+trigger: Last day of month
+
+steps:
+  - name: Revenue Reconcile
+    action: run_skill
+    skill: cfo-expert
+    command: "/finance close"
+
+  - name: P&L Review
+    action: run_skill
+    skill: cfo-expert
+    command: "/finance pl"
+
+  - name: Forecast Update
+    action: run_skill
+    skill: fp-and-a
+    command: "/forecast monthly"
+
+  - name: Invoices Sent
+    action: run_skill
+    skill: fp-and-a
+    command: "/finance invoices"
+
+  - name: Board Report Prep
+    action: run_skill
+    skill: investor-relations
+    command: "/board monthly"
